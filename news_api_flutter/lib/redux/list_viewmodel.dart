@@ -9,9 +9,10 @@ class NewsListViewModel {
   final Function() onLoadComplete;
   final Function(String) onFilterByTag;
   final Function(List<NewsItem> items) onGotData;
+  final int loadsClicked;
 
-  NewsListViewModel(
-      this.items, this.onLoadComplete, this.onFilterByTag, this.onGotData);
+  NewsListViewModel(this.items, this.onLoadComplete, this.onFilterByTag,
+      this.onGotData, this.loadsClicked);
 
   factory NewsListViewModel.create(Store<ListState> store) {
     _onLoadComplete() {
@@ -26,7 +27,7 @@ class NewsListViewModel {
       store.dispatch(GotListDataAction(items));
     }
 
-    return NewsListViewModel(
-        store.state.items, _onLoadComplete, _filterByTag, _gotData);
+    return NewsListViewModel(store.state.items, _onLoadComplete, _filterByTag,
+        _gotData, store.state.clicks);
   }
 }

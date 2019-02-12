@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news_api_flutter/redux/list_viewmodel.dart';
-import 'package:news_api_flutter/ui/news_list_page.dart';
 
 class FilterItemsWidget extends StatefulWidget {
   final NewsListViewModel model;

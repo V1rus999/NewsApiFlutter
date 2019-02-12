@@ -3,7 +3,11 @@ import 'package:news_api_flutter/redux/list_actions.dart';
 import 'package:news_api_flutter/data/news_item_model.dart';
 
 ListState listReducer(ListState state, action) {
-  return ListState(items: listItemReducer(state.items, action));
+  var items = listItemReducer(state.items, action);
+  var clicks =  itemClicksReducer(state.clicks, action);
+  return ListState(
+      items: items,
+      clicks: clicks);
 }
 
 List<NewsItem> listItemReducer(List<NewsItem> items, action) {
@@ -17,4 +21,12 @@ List<NewsItem> listItemReducer(List<NewsItem> items, action) {
       ..retainWhere((it) => it.tags.contains(action.tagToFilterBy));
   }
   return items;
+}
+
+int itemClicksReducer(int count, action) {
+  if (action is GotListDataAction) {
+    return ++count;
+  } else {
+    return count;
+  }
 }

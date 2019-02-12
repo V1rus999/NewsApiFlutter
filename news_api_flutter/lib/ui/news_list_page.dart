@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:news_api_flutter/redux/list_state.dart';
 import 'package:news_api_flutter/redux/list_viewmodel.dart';
+import 'package:news_api_flutter/ui/dynamic_text_widget.dart';
 import 'package:news_api_flutter/ui/filter_items_widget.dart';
 import 'package:news_api_flutter/ui/item_list_widget.dart';
 import 'package:news_api_flutter/ui/load_items_widget.dart';
-import 'package:news_api_flutter/data/news_item_model.dart';
-import 'package:news_api_flutter/redux/list_actions.dart';
-import 'package:redux/redux.dart';
 
 class NewsListPage extends StatelessWidget {
   @override
@@ -24,7 +22,8 @@ class NewsListPage extends StatelessWidget {
             Expanded(
               child: ItemListWidget(viewModel),
             ),
-            LoadItemsWidget(viewModel)
+            LoadItemsWidget(viewModel),
+            DynamicTextWidget(viewModel)
           ],
         ),
       ),
