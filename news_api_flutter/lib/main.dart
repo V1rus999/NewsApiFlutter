@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_api_flutter/redux/list_state.dart';
-import 'package:news_api_flutter/ui/news_list_page.dart';
+import 'package:news_api_flutter/ui/redux_ui/news_list_page.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:news_api_flutter/redux/list_reducer.dart';
@@ -20,7 +20,7 @@ class NewsListApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: NewsListPage(),
+          home: ReduxNewsListPage(),
         ));
   }
 }

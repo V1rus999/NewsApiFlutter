@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_api_flutter/data/news_item_model.dart';
 import 'package:news_api_flutter/redux/list_viewmodel.dart';
-import 'package:news_api_flutter/ui/news_list_page.dart';
+import 'package:news_api_flutter/ui/redux_ui/news_list_page.dart';
 
 class LoadItemsWidget extends StatelessWidget {
   final NewsListViewModel model;
